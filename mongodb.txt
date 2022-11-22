@@ -1,0 +1,16 @@
+MongoDB ==> https://github.com/mongodb/homebrew-brew
+========
+Setup and Installing:
+1. mongodb/brew
+2. brew install mongodb-community
+3. brew install mongosh
+4. brew install mongodb-database-tools
+5. brew install mongodb-community@6.0
+
+
+Starting/Stopping mongodb-community
+-----------------------------------
+brew services start mongodb-community
+brew services stop mongodb-community
+brew services restart mongodb-community
+
