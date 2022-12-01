@@ -27,3 +27,8 @@ Starting/Stopping mongodb-community
 - brew services stop mongodb-community
 - brew services restart mongodb-community
 
+## Indexes
+- db.Collection_name.getIndexes()
+### Create an index using createIndex() method:
+- db.Collection_name.createIndex( Key and Index Type, Options)
+
