@@ -2,17 +2,18 @@
 - 
 - 
 
-# Once the EC2 instance state turns to “Running”
+### Once the EC2 instance state turns to “Running”
 Setup and Installing:
 1. Create a `/etc/yum.repos.d/mongodb-org-6.0.repo` file so that you can install MongoDB directly using `yum`
 2. `sudo vim /etc/yum.repos.d/mongodb-org-6.0.repo`
-`-hit I to enter INSERT mode, copy and paste the following[mongodb-org-6.0]`
-`name=MongoDB Repository`
-`baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/6.0/x86_64/`
-`gpgcheck=1`
-`enabled=1`
-`gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc`
-` -hit esc key to exit INSERT mode, and run :wq to save the file.`
+- hit I to enter INSERT mode, copy and paste the following<br>
+`[mongodb-org-6.0]`<br>
+`name=MongoDB Repository`<br>
+`baseurl=https://repo.mongodb.org/yum/amazon/2/mongodb-org/6.0/x86_64/`<br>
+`gpgcheck=1`<br>
+`enabled=1`<br>
+`gpgkey=https://www.mongodb.org/static/pgp/server-6.0.asc`<br>
+- hit esc key to exit INSERT mode, and run :wq to save the file.
 
 3. Run the following command to install the latest MongoDB: `sudo yum install -y mongodb-org`
 4. Run the command below to verify MongoDB has been installed correctly: `mongod --version`
