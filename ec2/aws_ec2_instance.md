@@ -27,7 +27,7 @@ Setup:
 `8.19.2`<br>
 - Now, have the ability to run a node application on ec2 instance server.
 3. For run node applications with port num. xxxx (app.js):
-- Example, Create redirect from port 80 to 8000: ` sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000`
+- Example, Create redirect from port 80 to 8000: ` sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8000`<br>
 Tutor:
 - https://superuser.com/questions/1548372/forwarding-port-80-to-8000-doesnt-work
 - https://askubuntu.com/questions/444729/redirect-port-80-to-8080-and-make-it-work-on-local-machine
