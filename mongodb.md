@@ -23,9 +23,9 @@ It will ask you to overwrite link with mongo command.
 
 Starting/Stopping mongodb-community
 -----------------------------------
-- brew services start mongodb-community
-- brew services stop mongodb-community
-- brew services restart mongodb-community
+- sudo brew services start mongodb-community
+- sudo brew services stop mongodb-community
+- sudo brew services restart mongodb-community
 
 ## Indexes
 - db.Collection_name.getIndexes()
