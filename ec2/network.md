@@ -15,3 +15,4 @@ https://www.ionos.com/digitalguide/server/tools/introduction-to-netstat/
 - https://www.ionos.com/digitalguide/server/tools/introduction-to-netstat/
 
 1. `sudo ss -lntp` - view network connections 
+2. use `sudo lsof -i TCP:80` to see what application is listening on port 80: 
