@@ -18,7 +18,8 @@ Setup and Installing:
 3. Run the following command to install the latest MongoDB: `sudo yum install -y mongodb-org`
 4. Run the command below to verify MongoDB has been installed correctly: `mongod --version`
 - We have successfully set up MongoDB in the EC2 instance.
-5. To start the MongoDB run the following command: `sudo systemctl start mongod`
+5. To start the MongoDB run the following command: `sudo systemctl status mongod.service` OR `sudo systemctl start mongod`.
+The service command supports only basic actions: `(start, stop, restart, try-restart, reload, force-reload, status)`
 6. To verify the MongoDB has been started successfully, issue the following command: `sudo systemctl status mongod`
 - That is great, the MongoDB has been activated.
 3. Let’s go into the MongoDB shell. Issue the command below: `mongosh`
