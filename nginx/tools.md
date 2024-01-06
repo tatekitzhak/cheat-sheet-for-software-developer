@@ -7,9 +7,12 @@ NGINX config
 - `sudo vim /etc/nginx/nginx.conf`
 ### 
 - To help : `nginx -h`
-- Use `sudo lsof -i TCP:80` to see what application is listening on port 80
-- Check nginx status: `sudo systemctl status nginx`
+- Version: `nginx -V` or `nginx -v`
 - Check nginx runnig: `ps -ef | grep nginx`
+- Check nginx status: `sudo systemctl status nginx`
+- Use `sudo lsof -i TCP:80` to see what application is listening on port 80
+
+
 
 ### log
 - `sudo tail -f /var/log/nginx/access.log`
