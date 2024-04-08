@@ -16,19 +16,18 @@ Setup and Installing:
 5. `sudo apt update`
 6. `sudo systemctl enable --now mongod`
 7. `mongod --version`
-#############################
-# Changing the MongoDB Port #
-#############################
+
+# Changing the MongoDB Port:
 ## Changing the default port of MongoDB provides a first line of defence against unwanted intruders. 
 
 1. `sudo vim /etc/mongod.conf`
-- ### network interfaces
-net:
-  port: 27017
-  bindIp: 127.0.0.1
-In this example change the port to 28080.
-2. `sudo service mongod restart`
-3. To connect to the MongoDB use: `mongosh --port <new-mongodb-port>`
+- #network interfaces:
+  net:
+    port: 27017
+    bindIp: 127.0.0.1
+- In this example change the port to 28080.
+-  `sudo service mongod restart`
+- To connect to the MongoDB use: `mongosh --port <new-mongodb-port>`
 ## Starting/Stopping mongodb-community
 -----------------------------------
 - `sudo systemctl restart mongod`
