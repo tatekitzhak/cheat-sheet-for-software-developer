@@ -16,4 +16,6 @@
  - `sudo mysql` - Log into our SQL database.
  - `quit` - To exit the MySQL console.
 
+## Install PHP
+-`sudo apt install php libapache2-mod-php php-mysql`
 
