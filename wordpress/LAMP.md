@@ -1,7 +1,8 @@
 
 
 # Ubuntu: Configuring a LAMP stack (Linux, Apache, MySQL, PHP)
-- https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
+1. https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
+2. https://blog.oudel.com/install-wordpress-on-aws-ec2-ubuntu-a-comprehensive-guide/
 - `sudo apt update` - will refresh the list of available packages.
 - `sudo apt upgrade` - will upgrade all installed packages.
 
