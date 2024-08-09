@@ -41,3 +41,11 @@
 
 ## Manually removing phpMyAdmin
 - `sudo rm -rf /usr/share/phpmyadmin`
+
+## Create a MySQL Database and User for WordPress
+- `CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
+- `CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress3.1415';`
+- `GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost';`
+- `FLUSH PRIVILEGES;`
+- `EXIT;`
+
