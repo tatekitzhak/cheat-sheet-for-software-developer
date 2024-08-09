@@ -1,6 +1,7 @@
 
 
 # Ubuntu: Configuring a LAMP stack (Linux, Apache, MySQL, PHP)
+- https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
 - `sudo apt update` - will refresh the list of available packages.
 - `sudo apt upgrade` - will upgrade all installed packages.
 
@@ -43,8 +44,9 @@
 - `sudo rm -rf /usr/share/phpmyadmin`
 
 ## Create a MySQL Database and User for WordPress
+- https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
 - `CREATE DATABASE wordpress DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
-- `CREATE USER 'wordpress'@'localhost' IDENTIFIED BY 'wordpress3.1415';`
+- `CREATE USER 'wordpressuser'@'localhost' IDENTIFIED BY 'wordpressPasword';`
 - `GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpressuser'@'localhost';`
 - `FLUSH PRIVILEGES;`
 - `EXIT;`
