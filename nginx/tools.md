@@ -20,11 +20,11 @@ NGINX config
 - Find the Nginx port as listed: `sudo netstat -tlpn| grep nginx`
 
 ### NGINX BASIC COMMAND
+- `sudo apt install nginx` - Install Apache.
+- `sudo systemctl start/status nginx` - Check and verify Nginx server is running.
+- `sudo systemctl stop nginx` - A commo reason to stop is to change configration.
+- `sudo systemctl reload nginx`- 
 - `sudo systemctl enable nginx`
-- `sudo systemctl status nginx` 
-- `sudo systemctl restart nginx` 
-- `sudo systemctl start nginx `
-- `sudo systemctl stop nginx`
-restart:
+- `sudo nginx -t` - Check Nginx Configuration Syntax is correct. useful if you have made changes or added a new configuration to the existing configuration structur
 - `sudo systemctl restart nginx.service`
 - `nginx -s reload`
