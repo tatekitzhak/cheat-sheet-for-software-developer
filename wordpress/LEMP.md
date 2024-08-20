@@ -1,12 +1,10 @@
-
-
 # Ubuntu: Configuring a LEMP stack (Linux, Nginx, MySQL, PHP)
 1. https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
 2. https://blog.oudel.com/install-wordpress-on-aws-ec2-ubuntu-a-comprehensive-guide/
 - `sudo apt update` - will refresh the list of available packages.
 - `sudo apt upgrade` - will upgrade all installed packages.
 
-## Now, install Nginx.
+## Install Nginx.
 - `sudo apt install nginx` - Install Apache.
 - `sudo systemctl start/status nginx` - Check and verify Nginx server is running.
 - `sudo systemctl stop nginx` - A commo reason to stop is to change configration.
@@ -24,11 +22,31 @@
 ## Install MySQL
 - `sudo apt install mysql-server mysql-client -y` 
 - `sudo mysql_secure_installation`- To make the database more secure.
-- `sudo service mysql status` - Check our SQL database status.
-- `sudo service mysql enable`
-
+- `sudo service/systemctl mysql status` - Check our SQL database status.
+- `sudo service/systemctl mysql enable`
+Check MySQL Version with V Command:
+- `mysql -V`
+mysql>
 - `sudo mysql` - Log into our SQL database.
+- `STATUS;`
+- `SHOW DATABASES;` OR `SHOW SCHEMAS;`
+- `show tables;`
 - `quit` - To exit the MySQL console.
+
+
+## Install PHP
+- `sudo apt install php8.3 php8.3-gb php8.3-zip php8.3-fpm`
+OR
+- `sudo apt install php php-gb php-zip php-fpm -y`
+
+Install essential PHP modules required by most dynamic applications.
+- `sudo apt install php-mysql php-cli -y`
+Start the PHP-FPM service depending on your installed version such as PHP 8.3.
+- `sudo systemctl start/status php` Or `sudo systemctl start/status php8.3-fpm`
+ Version of PHP:
+- `sudo php -v`
+View the PHP-FPM unix socket path using the ss utility:
+- `ss -pl | grep php`
 
 ## Create a MySQL Database and User for WordPress
 - https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
@@ -38,13 +56,6 @@
 - `GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress_username'@'localhost';`
 - `FLUSH PRIVILEGES;`
 - `EXIT;`
-
-## Install PHP
-- `sudo apt install php8.3 php8.3-gb php8.3-zip php8.3-fpm php-mysql`
-OR
-- `sudo apt install php php-gb php-fpm php-mysql`
-- `sudo systemctl status php` Or `sudo systemctl status php8.3-fpm`
-- `sudo php -v` - Version of PHP.
 
 ## Setting up the WordPress 
 Open the WordPress site directory.
@@ -65,9 +76,9 @@ Copy the untared files to the current folder and delete the other files
 - `sudo apt update`
 - `sudo apt install phpmyadmin`
 
-## Problem Solutions
+# Problem Solutions
 
-# Uninstall phpMyAdmin
+## Uninstall phpMyAdmin
 - https://linuxscriptshub.com/how-to-uninstall-phpmyadmin-on-ubuntu/
 - `sudo apt remove phpmyadmin`
 
