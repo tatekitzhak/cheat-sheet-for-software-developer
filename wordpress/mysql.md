@@ -30,8 +30,8 @@ Log into the MySQL shell using your MySQL root password:
 - Database for WordPress
 - `sudo mysql -u root -p`  
 - `CREATE DATABASE wordpress_db_name DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;`
-- `CREATE USER 'wordpress_username'@'localhost' IDENTIFIED BY 'wordpress_secret_pasword';`
-- `GRANT ALL PRIVILEGES ON wordpress_database_name.* TO 'wordpress_username'@'localhost';`
+- `CREATE USER 'wordpress_root'@'localhost' IDENTIFIED BY 'wordPress#3.1415';`
+- `GRANT ALL PRIVILEGES ON wordpress_db_name.* TO 'wordpress_username'@'localhost';`
 - `FLUSH PRIVILEGES;`
 - `EXIT;`
 

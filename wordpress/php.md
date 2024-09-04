@@ -6,7 +6,7 @@
 
 ## Install PHP
 - `sudo apt install php8.3 php8.3-gb php8.3-zip php8.3-fpm`
-OR
+OR sudo apt install php8.2 php8.2-fpm -y
 - `sudo apt install php php-gb php-zip php-fpm -y`
 - `cd /var/run/php/`
 - `ls`
@@ -19,7 +19,16 @@ Start the PHP-FPM service depending on your installed version such as PHP 8.3.
 - `sudo systemctl start/status php8.3-fpm`
 - `sudo systemctl php8.x-fpm restart`
 
-
+## Create a sample PHP file to test the PHP configuration via browser:
+- To do so, create a file called “info.php” under Nginx document root folder.
+- `sudo vim /var/www/html/info.php`
+- Add the following lines:
+```
+<?php
+phpinfo();
+?>
+```
+- `sudo systemctl restart nginx`
 
 ## Testing nginx -> /info.php default web page
 -  http://your_server_ip/info.php

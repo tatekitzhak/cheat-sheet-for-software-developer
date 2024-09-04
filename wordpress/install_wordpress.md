@@ -4,11 +4,15 @@
 ## Setup WordPress webserver and file permissions for write access to the files. 
 - `cd /var/www/html`
 - `sudo chmod -R 755 /var/www/html`
-- `chown www-data:www-data  -R *`  # Let Apache be owner
+- `sudo chown www-data:www-data  -R *`  # Let Nginx/Apache be owner
+- `sudo chown www-data:www-data /var/www/html/ -R`
 For Directories:
 - `sudo find . -type d -exec chmod 755 {} \;`  # Change directory permissions rwxr-xr-x
 For Files:
 - `sudo find . -type f -exec chmod 644 {} \;`  # Change file permissions rw-r--r--
+- sudo chown -R www-data:www-data /var/www/html
+- sudo find /var/www/html -type d -exec chmod 755 {} \;
+- sudo find /var/www/html -type f -exec chmod 644 {} \;
 
 ## Create a MySQL Database and User for WordPress
 - https://medium.com/@sutrapusharan/how-to-install-wordpress-on-aws-with-ubuntu-22-04-with-a-lamp-stack-220f7335089c
@@ -24,7 +28,7 @@ Open the WordPress site directory.
 - `cd /var/www/html`
 Download latest WordPress package and untar it.
 - `sudo wget http://wordpress.org/latest.tar.gz` 
-- `tar -xzvf latest.tar.gz`
+- `sudo tar -xzvf latest.tar.gz`
 Copy the untared files to the current folder and delete the other files
 - `sudo cp -r ./wordpress/* ./`
 - `sudo rm -r wordpress`
