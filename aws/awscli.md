@@ -11,6 +11,9 @@ Stop:
 
 ## Get the Public IP Addresses of your EC2 Instances Using AWS CLI
 - `aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId, PublicIpAddress]' --output table `
+- `aws ec2 describe-instances --query "Reservations[*].Instances[*].[InstanceId,PublicIpAddress,PrivateIpAddress,Tags[?Key=='Name'].Value[]]" --output table `
+- `aws ec2 describe-instances --query 'Reservations[].Instances[].[InstanceId, Tags[?Key==`Name`], Tags[?Key==`Name`].Value[]]'`
+
 
 ## List S3 Buckets using AWS CLI
 - `aws s3 ls`
