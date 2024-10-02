@@ -2,6 +2,9 @@
 - https://betterstack.com/community/guides/scaling-nodejs/dockerize-nodejs/
 - https://bun.sh/guides/ecosystem/docker
 
+## Start the docker on macOS
+- `open -a Docker`
+
 1. The command we used to build the Image from the Dockerfile is
 - `docker build -t <name of directory> .`
 - `docker images` To validate if your image has created 
