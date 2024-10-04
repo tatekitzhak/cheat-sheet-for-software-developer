@@ -6,8 +6,11 @@
 - `open -a Docker`
 
 1. The command we used to build the Image from the Dockerfile is
+
 - `docker build -t <name of directory> .`
 - `docker images` To validate if your image has created 
+- `docker container run --name [container_instance_name] -it -p [container_port]:[app_port] -d [image_name]`
+OR
 - `docker run -d -p 3000:3000 <name of directory>`
 OR
 - `docker container run -it -p 8081:8080 -d --name nodejsdocker saravak/dockernodejs`
@@ -28,7 +31,7 @@ Here:
 - docker container top <containername/id> #executes the top command in the container specified, fails if the specified container is not running
 
 # SSH into your container ( Not actually SSH ) 
-- `docker exec -it b2e3a314f3ac /bin/sh` 
+- `docker exec -it [container_id_or_name] /bin/sh` 
 OR
 - `docker container exec -it nodejsdocker "/bin/sh"`
 
