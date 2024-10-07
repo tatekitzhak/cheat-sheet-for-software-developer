@@ -7,9 +7,21 @@
 
 1. The command we used to build the Image from the Dockerfile is
 
-- `docker build -t <name of directory> .`
+- `docker build -t <new_contatiner_name> .`
+Or
+- `docker build . -t <new_contatiner_name:version_num> .`
+
 - `docker images` To validate if your image has created 
 - `docker container run --name [container_instance_name] -it -p [container_port]:[app_port] -d [image_name]`
+
+- `docker container run -d \
+    --name container_my_first_nginx -it \
+    -p 5006:80 \
+    my_first_nginx`
+
+OR
+- ` docker container run -d --rm --name [container_instance_name] -it -p [container_port]:[app_port] [image_name]`
+- --rm : that meaning remove a container after closed.
 OR
 - `docker run -d -p 3000:3000 <name of directory>`
 OR
@@ -33,6 +45,7 @@ Here:
 # SSH into your container ( Not actually SSH ) 
 - `docker exec -it [container_id_or_name] /bin/sh` 
 OR
+- `docker exec -it c8e2f1dc95d3 sh`
 - `docker container exec -it nodejsdocker "/bin/sh"`
 
 # How to remove/delete the container

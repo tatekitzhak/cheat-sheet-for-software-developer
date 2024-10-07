@@ -1,11 +1,12 @@
 ## Start Nginx image
 
 ```
-FROM nginx:latest
+FROM node:latest
 
-# WORKDIR /
+# Change the working directory on the Docker image to /app
+WORKDIR /app
 
-RUN echo "Start Nginx image" 
+RUN echo "Start node image" 
 
 RUN apt -y update && \
     apt -y install vim && \
@@ -14,16 +15,25 @@ RUN apt -y update && \
 
 # I ALSO WANT TO INSTALL CERBOT FOR LATER USE (in my entrypoint file)
 
-# RUN apt-get -y install python-certbot-nginx -t stretch-backports
+# COPY ./something ./tothisimage 
+# COPY ./something ./tothisimage 
+# COPY ./something ./tothisimage 
 
-# COPY ./something ./tothisimage 
-# COPY ./something ./tothisimage 
-# COPY ./something ./tothisimage 
-# COPY ./something ./tothisimage 
+# Copy package.json and package-lock.json to the /app directory
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
 
 COPY entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["bash", "/entrypoint.sh"]
+
+# Expose application port
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
 ```
 
 - entrypoint.sh
