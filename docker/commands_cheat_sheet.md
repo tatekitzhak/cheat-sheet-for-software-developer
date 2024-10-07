@@ -13,11 +13,14 @@ Or
 
 - `docker images` To validate if your image has created 
 - `docker container run --name [container_instance_name] -it -p [container_port]:[app_port] -d [image_name]`
-
-- `docker container run -d \
+OR
+- 
+```
+docker container run -d \
     --name container_my_first_nginx -it \
     -p 5006:80 \
-    my_first_nginx`
+    my_first_nginx
+```
 
 OR
 - ` docker container run -d --rm --name [container_instance_name] -it -p [container_port]:[app_port] [image_name]`
