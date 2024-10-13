@@ -7,9 +7,10 @@
 
 1. The command we used to build the Image from the Dockerfile is
 
-- `docker build -t <new_contatiner_name> .`
-Or
-- `docker build . -t <new_contatiner_name:version_num> .`
+- `docker build . -t <new_image_name> `
+- `-f` or `-file`: This option can be used to specify a different Dockerfile name or location if it is not named "Dockerfile." In this example, the image will be built using the Dockerfile named "ProductionDockerfile" in the current directory.
+- OR
+- `docker build . -t <new_image_name:version_num>`
 
 - `docker images` To validate if your image has created 
 - `docker container run --name [container_instance_name] -it -p [container_port]:[app_port] -d [image_name]`
