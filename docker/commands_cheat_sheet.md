@@ -5,7 +5,7 @@
 ## Start the docker on macOS
 - `open -a Docker`
 
-1. The command we used to build the Image from the Dockerfile is
+## The command we used to build the Image from the Dockerfile is
 
 - `docker build . -t <new_image_name> `
 - `-f` or `-file`: This option can be used to specify a different Dockerfile name or location if it is not named "Dockerfile." In this example, the image will be built using the Dockerfile named "ProductionDockerfile" in the current directory.
@@ -13,6 +13,8 @@
 - `docker build . -t <new_image_name:version_num>`
 
 - `docker images` To validate if your image has created 
+
+# 
 - `docker container run --name [container_instance_name] -it -p [container_port]:[app_port] -d [image_name]`
 OR
 - 
@@ -36,6 +38,17 @@ Here:
 - -p 8081:8080 - Port Forwarding Between Host and the Container. Right to the colon is a container and Left to the colon is Host. 8081 is the Host and 8080 is the container Port.
 - nodejsdocker - Name of the container we are starting ( Replacement of Container ID)
 - saravak/dockernodejs - The name of the image from which we are going to create a Container
+
+```
+docker run -d -it --rm -e MONGO_USERNAME=ran -e MONGO_PASSWORD=your_password -e MONGO_PORT=27017 -e MONGO_DB=mongo_db_name -p 3000:3000 --name nodejs_webap_environment_variables nodejs_webapp_env_var
+
+```
+
+docker run -d -it \
+-e MONGO_USERNAME=ran \
+-p 3080:3000 \
+--name nodejs_webap_environment_variables_test \
+node-webapp
 # monitoring the Container 
 
 - `docker container list` # list the containers created

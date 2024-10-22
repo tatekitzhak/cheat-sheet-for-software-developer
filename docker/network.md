@@ -7,7 +7,8 @@
     docker container run -d 
     --name container_name 
     --network network_name 
-    image_name ```
+    image_name 
+    ```
 # Pingping Docker container from another container
 ## Test Connectivity:
 - `docker container exec -it [container1] ping [container2]`
