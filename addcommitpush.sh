@@ -18,11 +18,13 @@ function git_addcommitpush () {
 
     current=$(git branch | grep "*" | cut -b 3-)
 
-    message=\'"$@"\'
+    # A params from user
+    arg=\'"$@"\'
     echo "*******1 $current"
-    echo -e "${Green}message: ${message} ${ENDCOLOR}"
+    echo -e "${Green} A params from user: ${arg} ${ENDCOLOR}"
 
     git status
+    read -p "Please enter commit message:" message
     git add . && git status && git commit -a -m "$message"
     read -p "This script will perform system maintenance tasks. Are you sure you want to proceed? (y/n) " confirm
 

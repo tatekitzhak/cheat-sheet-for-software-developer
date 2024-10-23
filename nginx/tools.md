@@ -9,7 +9,8 @@ NGINX config
 - To help : `nginx -h`
 - Version: `nginx -V` or `nginx -v`
 - Check nginx runnig: `ps -ef | grep nginx`
-- Check nginx status: `sudo systemctl status nginx`
+- Check nginx status: 
+- `sudo systemctl restart nginx` OR `service nginx restart`
 - Use `sudo lsof -i TCP:80` to see what application is listening on port 80
 
 
