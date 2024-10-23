@@ -11,7 +11,7 @@ Stop:
 
 ## Get the Public IP Addresses of your EC2 Instances Using AWS CLI
 ```
-A table resualt:
+Command line for a table resualt:
 +---------------------+-------------------------+----------------+----------+-------------+----------------+
 |     InstanceId      |          Name           |   PublicIP     | Status   |    Type     |     VpcId      |
 +---------------------+-------------------------+----------------+----------+-------------+----------------+

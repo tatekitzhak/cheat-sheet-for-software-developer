@@ -18,9 +18,10 @@ function git_addcommitpush () {
 
     current=$(git branch | grep "*" | cut -b 3-)
 
-    # A params from user
+    
     arg=\'"$@"\'
-    echo "*******1 $current"
+    echo "A resualt branchs from git : $current"
+    # A params from user
     echo -e "${Green} A params from user: ${arg} ${ENDCOLOR}"
 
     git status
@@ -32,12 +33,11 @@ function git_addcommitpush () {
     # echo "Where to push?"
     # read -i "$current" -e branch
     read -p "Where to push? " current_branch
-    echo "*******2 $current_branch"
+    echo "a current branch: $current_branch"
 
     # echo "You sure you wanna push? (y/n)"
     # read -i "y" -e yn
     read -p "You sure you wanna push? (y/n): " yn
-    echo "*******3 $current_branch"
 
     if [ "$yn" = y ]; then
         #git push origin "$branch"
