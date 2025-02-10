@@ -35,7 +35,7 @@ echo "in entrypoint"
 
 # After I want to run nginx normally....
 
-nginx -t && service nginx reload
+sudo nginx -t && sudo systemctl reload nginx
 
 echo "after reload"
 ```

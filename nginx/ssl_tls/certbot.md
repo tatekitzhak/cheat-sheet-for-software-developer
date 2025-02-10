@@ -3,10 +3,13 @@
 - https://certbot.eff.org/instructions?ws=nginx&os=pip
 - https://www.f5.com/company/blog/nginx/using-free-ssltls-certificates-from-lets-encrypt-with-nginx#:~:text=certbot%20can%20automatically%20configure%20NGINX,re%20requesting%20a%20certificate%20for.
 
+- Allow a firewall for HTTPS traffic on port 443.
 - Install Certbot and it’s Nginx plugin with apt:
-- `sudo apt-get update` 
+- `sudo apt update` 
 - `sudo apt install certbot python3-certbot-nginx`
-- 
+- Get the SSL Certificate:
+- `sudo certbot --nginx -d convertotext.com -d www.convertotext.com`
+
 ```
 worker_processes auto;
 
@@ -44,13 +47,14 @@ http {
         listen 443 default_server ssl; # managed by Certbot
         #listen [::]:443 default_server;
         listen [::]:443 default_server ssl ipv6only=on; # managed by Certbot
-        server_name example.com www.example.com;
+        server_name www.convertotext.com;
 
         keepalive_timeout   70;
         
         # ssl on;
 
-        ssl_certificate     /etc/letsencrypt/live/ssl.itsyndicate.org/fullchain.pem;
+        # managed by Certbot
+        ssl_certificate     /etc/letsencrypt/live/ssl.itsyndicate.org/fullchain.pem; 
         ssl_certificate_key /etc/letsencrypt/live/ssl.itsyndicate.org/privkey.pem;
         ssl_protocols       TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
         ssl_ciphers         HIGH:!aNULL:!MD5;
@@ -61,9 +65,10 @@ http {
         # Nginx only supports HTTPS, not HTTP.
         ####
         
-        if ($scheme = http) {
-            return 301 https://$server_name$request_uri;
-        } # managed by Certbot
+        # Redirect non-https traffic to https
+        if ($scheme != "https") {
+            return 301 https://$host$request_uri;
+        } # 
 
         if ($host = two.example.com) {
             return 301 https://$host$request_uri;
@@ -74,15 +79,19 @@ http {
         }
     }
 }
-
 ```
+
+## Allow a firewall for HTTPS traffic on port 443.
+
 - Save the file, then run this command to verify the syntax of your configuration and restart NGINX:
 - `sudo nginx -t && sudo systemctl reload nginx`
 - Obtain the SSL/TLS Certificate:
 - `sudo certbot --nginx -d example.com -d www.example.com`
 
 ## Verifying Certbot Auto-Renewal
-- `sudo systemctl status certbot.timer` OR `sudo certbot renew --dry-run`
+- `sudo systemctl status certbot.timer` 
+- `sudo certbot renew --dry-run`
+
 
 ## Test SSL Configuration
 - `curl -vI https://websitname.com`

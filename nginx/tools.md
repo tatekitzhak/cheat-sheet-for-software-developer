@@ -26,6 +26,7 @@ NGINX config
 - `sudo systemctl stop nginx` - A commo reason to stop is to change configration.
 - `sudo systemctl reload nginx`- 
 - `sudo systemctl enable nginx`
-- `sudo nginx -t` - Check Nginx Configuration Syntax is correct. useful if you have made changes or added a new configuration to the existing configuration structur
-- `sudo systemctl restart nginx.service`
+- Check Nginx Configuration Syntax is correct. useful if you have made changes or added a new configuration to the existing configuration structur:
+- `sudo nginx -t && sudo systemctl reload nginx`
+- `sudo systemctl restart nginx`
 - `nginx -s reload`
