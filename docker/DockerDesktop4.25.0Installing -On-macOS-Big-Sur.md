@@ -7,29 +7,29 @@ Click Uninstall
 # Manual Removal (If Docker Desktop Is Broken)
 
 # Remove the Docker Desktop application
-sudo rm -rf /Applications/Docker.app
+- sudo rm -rf /Applications/Docker.app
 
 # Remove Docker Desktop data
-rm -rf ~/Library/Group\ Containers/group.com.docker
-rm -rf ~/Library/Containers/com.docker.docker
-rm -rf ~/Library/Application\ Support/Docker\ Desktop
-rm -rf ~/Library/Preferences/com.docker.docker.plist
-rm -rf ~/Library/Saved\ Application\ State/com.electron.docker-frontend.savedState
-rm -rf ~/Library/Logs/Docker\ Desktop
-rm -rf ~/Library/Preferences/com.electron.docker-frontend.plist
-rm -rf ~/Library/Cookies/com.docker.docker.binarycookies
+- rm -rf ~/Library/Group\ Containers/group.com.docker
+- rm -rf ~/Library/Containers/com.docker.docker
+- rm -rf ~/Library/Application\ Support/Docker\ Desktop
+- rm -rf ~/Library/Preferences/com.docker.docker.plist
+- rm -rf ~/Library/Saved\ Application\ State/com.electron.docker-frontend.savedState
+- rm -rf ~/Library/Logs/Docker\ Desktop
+- rm -rf ~/Library/Preferences/com.electron.docker-frontend.plist
+- rm -rf ~/Library/Cookies/com.docker.docker.binarycookies
 
 # Remove Docker Desktop CLI symlinks and credential helpers
-sudo rm -f /usr/local/bin/docker
-sudo rm -f /usr/local/bin/docker-compose
-sudo rm -f /usr/local/bin/docker-credential-desktop
-sudo rm -f /usr/local/bin/docker-credential-osxkeychain
-sudo rm -f /usr/local/bin/hub-tool
-sudo rm -f /usr/local/bin/com.docker.cli
+- sudo rm -f /usr/local/bin/docker
+- sudo rm -f /usr/local/bin/docker-compose
+- sudo rm -f /usr/local/bin/docker-credential-desktop
+- sudo rm -f /usr/local/bin/docker-credential-osxkeychain
+- sudo rm -f /usr/local/bin/hub-tool
+- sudo rm -f /usr/local/bin/com.docker.cli
 
 # Remove Docker socket and config
-rm -rf ~/.docker
-sudo rm -f /var/run/docker.sock
+- rm -rf ~/.docker
+- sudo rm -f /var/run/docker.sock
 
 
 
