@@ -59,13 +59,15 @@ node-webapp
 ### Stop all the containers
 - `docker stop $(docker ps -a -q)`
 ### Remove all the containers
-- `docker rm $(docker ps -a -q)`
+- `docker rm $(docker ps -a -q)` or `docker rm $(docker ps -aq)`
 ### To delete all containers including its volumes use,
 - `docker rm -vf $(docker ps -aq)`
 ### To delete all the images
 - `docker rmi -f $(docker images -aq)`
 ### Remove all unused containers, networks, images (both dangling and unused), and optionally, volumes.
 - `docker system prune`
+### Force delete all volumes:
+- `docker volume rm $(docker volume ls -q)`
 - docker container stats <containername/id> #prints the CPU and MEM usage data of the container name
 - docker container stats #prints the CPU and MEM usage of all running containers
 - docker container top <containername/id> #executes the top command in the container specified, fails if the specified container is not running
